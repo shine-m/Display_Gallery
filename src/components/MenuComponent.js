@@ -9,25 +9,17 @@ import {
   CardTitle,
 } from "reactstrap";
 
-import { Detail_girlComponent } from "./detailComponent";
 
 class Menu extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      selectedGirl: null,
-    };
-  }
+ 
 
-  onGirlSelect(girl) {
-    this.setState({ selectedGirl: girl });
-  }
+
 
   render() {
     // here col 12 means the whole page width will be 12 columns and  12 is the highest value
     const gallary = this.props.girls.map((girl) => (
       <div key={girl.id} className="col-12 col-md-6 m-0">
-        <Card onClick={() => this.onGirlSelect(girl)}>
+        <Card onClick={() => this.props.onClick(girl.id)}>
           <CardImg width="100%" src={girl.image} />
           <CardImgOverlay>
             <CardTitle>{girl.name}</CardTitle>
@@ -39,11 +31,6 @@ class Menu extends Component {
     return (
       <div className="container">
         <div className="row">{gallary}</div>
-        <div className="col-12 col-md-12 m-0">
-          {/* {this.renderOnSelect(this.state.selectedGirl)}
-           */}
-          <Detail_girlComponent girl={this.state.selectedGirl}/>
-        </div>
       </div>
     );
     // this one is for  Media implementation ------------------------------------------------------------------------------------------------------------
