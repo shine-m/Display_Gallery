@@ -14,9 +14,19 @@ selectedGirl: null
         this.setState({selectedGirl : girl});
     }
     renderOnSelect(girl) {
-        if (girl != null) return (<Card>
-            <CardImg width="100%" src={girl.image} />
-        </Card>);
+        if (girl != null) return (
+  <Card className="m-0">
+    <div className="row g-4"> {/* row with no gap 4 pixels*/}
+      <div className="col-12 col-md-9">{/* There will be total 12 columns in total and the div will occupy 9 of them*/}
+        <CardImg width="100%" src={girl.image} />
+      </div>
+      <div className="col-12 col-md-3 ">
+        <CardText className="p-3">{girl.comments}</CardText>
+      </div>
+    </div>
+  </Card>
+);
+
         else return (<div></div>);
     }
     render() {
@@ -38,7 +48,7 @@ selectedGirl: null
                 <div className="row">
                   {gallary}
                 </div>
-                <div className="col-12 col-md-11 m-1">
+                <div className="col-12 col-md-12 m-0">
                     {this.renderOnSelect(this.state.selectedGirl)}
                 </div>
 </div>
