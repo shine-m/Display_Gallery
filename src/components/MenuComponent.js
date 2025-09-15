@@ -22,10 +22,7 @@ class Menu extends Component {
   onGirlSelect(girl) {
     this.setState({ selectedGirl: girl });
   }
-  renderOnSelect(girl) {
-    if (girl != null) return <Detail_girlComponent girl={girl} />;
-    else return <div></div>;
-  }
+
   render() {
     // here col 12 means the whole page width will be 12 columns and  12 is the highest value
     const gallary = this.props.girls.map((girl) => (
@@ -43,7 +40,9 @@ class Menu extends Component {
       <div className="container">
         <div className="row">{gallary}</div>
         <div className="col-12 col-md-12 m-0">
-          {this.renderOnSelect(this.state.selectedGirl)}
+          {/* {this.renderOnSelect(this.state.selectedGirl)}
+           */}
+          <Detail_girlComponent girl={this.state.selectedGirl}/>
         </div>
       </div>
     );
