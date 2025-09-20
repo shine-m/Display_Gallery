@@ -1,8 +1,9 @@
-import{Navbar, NavbarBrand} from 'reactstrap'
 import Menu from "./MenuComponent";
 import { girlsList } from '../shared/girlsList';
 import { Component } from 'react';
 import { Detail_girlComponent } from "./detailComponent";
+import Header from "./HeaderComponent";
+import Footer from "./FooterComponent";
 
 
 class Main extends Component{
@@ -22,13 +23,10 @@ class Main extends Component{
   render() {
       return (
           <div className="container">
-      <Navbar dark color='primary'>
-        <div className='container'>
-          <NavbarBrand href='/'>Resonating from app confusion</NavbarBrand>
-        </div>
-      </Navbar>
+      <Header/>
               <Menu girls={this.state.girls} onClick = {(girlId)=>this.onGirlSelect(girlId)} /> 
-              <Detail_girlComponent girl= {this.state.girls.filter((girl)=>girl.id === this.state.selectedGirl)[0]} />
+          <Detail_girlComponent girl={this.state.girls.filter((girl) => girl.id === this.state.selectedGirl)[0]} />
+          <Footer/>
     </div>
   );
   }

@@ -29,7 +29,7 @@ const Detail_girlComponent =(props)=> {
           </Card>
         </div>
       );
-    else return (<div></div>);
+    else return null;
   }
 
 
