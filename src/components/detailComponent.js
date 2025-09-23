@@ -6,12 +6,14 @@ import {
   CardBody,
   CardTitle,
 } from "reactstrap";
+import { useLocation } from "react-router-dom";
 
-const Detail_girlComponent =(props)=> {
+const Detail_girlComponent =()=> {
   
-
+  const location = useLocation();
+  const { girl } = location.state || {};
   
-    if (props.girl != null)
+    if (girl != null)
       return (
         <div className="container">
           <Card className="m-0">
@@ -20,10 +22,10 @@ const Detail_girlComponent =(props)=> {
               {/* row with gap 4*4 pixels*/}
               <div className="col-12 col-md-9">
                 {/* There will be total 12 columns in total and the div will occupy 9 of them*/}
-                <CardImg width="100%" src={props.girl.image} />
+                <CardImg width="100%" src={girl.image} />
               </div>
               <div className="col-12 col-md-3 ">
-                <CardText className="p-3">{props.girl.comments}</CardText>
+                <CardText className="p-3">{girl.comments}</CardText>
               </div>
             </div>
           </Card>
