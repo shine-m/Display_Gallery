@@ -3,7 +3,6 @@ import { Card, CardImg ,CardText,CardBody} from "reactstrap";
 
 
 const RenderItem = ({item}) => {
-    console.log('invoked');
     if (item != null)
         return (
         <div className="container">
@@ -27,12 +26,10 @@ const RenderItem = ({item}) => {
       );
     }
     function Home({girl}) {
-    console.log( girl.comments );
+    
     return (
         <div className="container">
-            <Card className="col-12 col-xxl-9 mx-auto">
-                <CardImg calssname="" src="./assets/images/honor.jpg"/>
-            </Card>
+            
             <div className="row align-items-start">
                 
             <div className="col-12 col-md-12 m-1">

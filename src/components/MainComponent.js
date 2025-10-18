@@ -7,8 +7,12 @@ import Header from "./HeaderComponent";
 import Footer from "./FooterComponent";
 import Home from "./HomeComponent";
 import { Routes, Route, Navigate,useParams } from 'react-router-dom';
-import Contact from './ContactComponent';
+// import Contact from './ContactComponent';
+import { AboutUs } from "./AboutUs";
+import Contact from "./Contact";
 
+
+import DeleteForm from "./deleteform";
 
 class Main extends Component{
   constructor(props) {
@@ -39,10 +43,14 @@ class Main extends Component{
       return (
           <div className="container">
           <Header />
+
+          {/* <DeleteForm/> */}
+  
           <Routes>
             <Route path='/home' element={<HomePage />}/>
             <Route path="/menu/:girlId" element={<this.GirlwithId/>}/>
             <Route path='/menu' element={<Menu girls={this.state.girls} />} />
+            <Route path="/aboutus" element={<AboutUs/>}/>
             <Route path='/detail' element={<Detail_girlComponent />} />
             <Route path='/contact' element ={<Contact/>}/>
             <Route path = '*' element={ <Navigate to ='/menu'/>}/>

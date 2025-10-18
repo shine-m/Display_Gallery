@@ -32,6 +32,18 @@ class Header extends Component{
                             <NavLink tag={RRNavLink} to="/menu">
                             <i className="fa fa-list fa-lg"></i>Menu
                             </NavLink>
+                            </NavItem>
+                            <NavItem>
+                            <NavLink tag={RRNavLink} to="/aboutus">
+                            <i className="fa fa-list fa-solid fa-circle-info"></i> AboutUs
+                                
+                            </NavLink>
+                        </NavItem>
+                            <NavItem>
+                            <NavLink tag={RRNavLink} to="/Contact">
+                            <i className="fa fa-list fa-solid fa-circle-info"></i> ContactUs
+                                
+                            </NavLink>
                         </NavItem>
 
                     </Nav>
